@@ -1,4 +1,5 @@
 dart pub global activate flutter_gen
+fluttergen -c pubspec.yaml
 ```
 
 ```
@@ -33,4 +34,10 @@ fvm flutter run -t lib/main_dev.dart
 
 # MOBILE DEV
 fvm flutter run -t lib/main_prod.dart   
+```
+
+```
+Route listening
+routeObserver.subscribe(this, ModalRoute.of(context) as PageRoute);
+final RouteObserver<PageRoute> routeObserver = RouteObserver<PageRoute>(); in didChangeDependencies function
 ```

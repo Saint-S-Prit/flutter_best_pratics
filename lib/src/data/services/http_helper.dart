@@ -3,8 +3,10 @@ import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_starter/src/data/models/failure.dart';
 import 'package:flutter_starter/src/data/models/success.dart';
+import 'package:flutter_starter/src/screens/widgets/toasts/custom_toast.dart';
 import 'package:flutter_starter/utils/app_config.dart';
 import 'package:injectable/injectable.dart';
+import 'package:toastification/toastification.dart';
 import 'local_helper.dart';
 
 
@@ -41,8 +43,9 @@ class HttpHelper {
       print("========== HTTP ERROR =========");
       print(error.response?.statusCode);
       print(error.response?.statusMessage);
-      print(( (error.response?.data?['data']?['errors'] is List && (error.response?.data?['data']?['errors'])?.isNotEmpty) ) ? error.response?.data?['data']?['errors'][0] : error.response?.data?['data']?['errors'] is Map<String, dynamic> ?  error.response?.data?['data']?['errors']['message']  : error.response?.data?['message'] ?? "An error has occurred. Please check your connection status.");
+      print(error.response?.data['message'] ?? "UNKNOW_ERROR_CODE");
     }
+    CustomToast.showMeaasgeDecoder(message: error.response?.data['message'] ?? "UNKNOW_ERROR_CODE", type: ToastificationType.error);
     if (error.response?.statusCode == 401) {}
     handler.next(error);
   }
