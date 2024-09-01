@@ -18,6 +18,14 @@ fvm flutter packages pub run build_runner build
 fvm flutter pub run intl_utils:generate
 ```
 
+```
+#RENAME APP
+flutter pub global activate rename
+
+rename setAppName --targets ios,android --value "YourAppName"
+rename setBundleId --targets ios,android --value "com.example.bundleId"
+```
+
 # RUN WEB
 ```
 # WEB DEV
