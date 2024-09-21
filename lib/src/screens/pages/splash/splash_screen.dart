@@ -28,7 +28,7 @@ class SplashScreen extends StatelessWidget {
                     EasyLoading.show(status: 'loading...');
                   },
                   child: const CustomText(
-                    text: "SHOW TOAST Email",
+                    text: "SHOW APP LOADER",
                   ),
                 ),
                 const SizedBox(height: 20),
@@ -61,13 +61,25 @@ class SplashScreen extends StatelessWidget {
                   prefixIcon: Icon(Icons.password),
                 ),
                 const SizedBox(height: 20),
-                const CutomIconButton(
+               const Row(
+                children: [
+                  CutomIconButton(
                   color: AppThems.transparentBleu,
                   shape: BoxShape.rectangle,
                   width: 50,
                   height: 50,
                   child: Icon(Icons.add, color: AppThems.darkBleu),
+                ),
+                SizedBox(width: 20),
+                  CutomIconButton(
+                  color: AppThems.transparentBleu,
+                  shape: BoxShape.circle,
+                  width: 50,
+                  height: 50,
+                  child: Icon(Icons.add, color: AppThems.darkBleu),
                 )
+                ],
+               ),
               ],
             ),
           ),
