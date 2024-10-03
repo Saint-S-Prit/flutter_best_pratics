@@ -7,6 +7,7 @@ flutter pub get
 ```
 
 ```
+# after added new file from assets folder
 dart run build_runner build
 
 # generate files for 
@@ -19,7 +20,7 @@ fvm flutter pub run intl_utils:generate
 ```
 
 ```
-#RENAME APP
+# RENAME APP
 flutter pub global activate rename
 
 rename setAppName --targets ios,android --value "YourAppName"
